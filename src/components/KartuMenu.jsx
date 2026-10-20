@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 function KartuMenu({nama, harga, kategori = "Makanan"}){
     const [jumlah, setJumlah] = useState(0)
-    const [catatan, setCatatan] = useState()
+    const [catatan, setCatatan] = useState("")
 
     function handleCatatan(e) {
         setCatatan(e.target.value);
@@ -21,6 +21,11 @@ function KartuMenu({nama, harga, kategori = "Makanan"}){
           <button onClick={() => {setJumlah((jumlah) => jumlah + 1)}}>+</button> <p>{jumlah}</p> <button onClick={() => {setJumlah((jumlah) => jumlah - 1)}}>-</button>
         </div>
         <p>Subtotal Rp {jumlah > 0 ? jumlah*harga : "..."}</p>
+        <div>
+            <span>catatan pesanan</span>
+            <input type="text"  value={catatan} onChange={handleCatatan()}> </input>
+        </div>
+        <p>catatan: {catatan == "" ? "" : {catatan} }</p>
       </div>
     );
 }
