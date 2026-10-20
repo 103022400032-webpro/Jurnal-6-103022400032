@@ -1,10 +1,12 @@
-function Panel({children, judul = null}){
-    return 
-    <div className = "panel"> 
-        {judul}
+function Panel({children, judul}){
+    return (
+
+        <div className = "panel"> 
+        {judul && <h2> {judul} </h2>} 
         {children}
     </div>
-
+    )
 }
+
 
 export default Panel
