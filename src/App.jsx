@@ -2,6 +2,7 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
+import './components/*'
 // import './App.css'
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <p>Selamat {jam < 12 ? "pagi" : "siang"}</p>
       <p>Saldo awal kartu kantin: {harga*1000} </p>
       <button>Bayar</button>
+      <Panel judul = "Menu hari ini">
+        <KartuMenu></KartuMenu>
+      </Panel>
     </>
   )
 }
